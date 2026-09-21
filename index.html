@@ -5,23 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gina Rumahseni - Les Mewarnai & Kaligrafi Anak di Banjarmasin</title>
     
-    <!-- Menggunakan font Fredoka untuk kesan ramah anak dan ceria -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome untuk Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Fredoka', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Fredoka', 'sans-serif'], },
                     colors: {
                         'gina-blue': '#4CAFFF',
                         'gina-pink': '#FF7CA3',
@@ -44,9 +38,7 @@
             background-image: radial-gradient(#e2e8f0 2px, transparent 2px);
             background-size: 30px 30px;
         }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
+        .card-hover { transition: all 0.3s ease; }
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 0px 0px rgba(0,0,0,0.1);
@@ -61,7 +53,6 @@
 </head>
 <body class="text-slate-800 antialiased overflow-x-hidden">
 
-    <!-- Navigasi -->
     <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -99,9 +90,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-b from-blue-100 to-white overflow-hidden">
-        <!-- Dekorasi Background -->
         <div class="absolute top-20 left-10 text-gina-yellow opacity-50 animate-pulse"><i class="fa-solid fa-sun text-6xl"></i></div>
         <div class="absolute bottom-20 right-10 text-gina-pink opacity-30 animate-bounce" style="animation-duration: 3s;"><i class="fa-solid fa-heart text-4xl"></i></div>
         <div class="absolute top-40 right-20 text-gina-blue opacity-20"><i class="fa-solid fa-cloud text-6xl"></i></div>
@@ -135,7 +124,6 @@
         <div class="absolute bottom-0 left-0 w-full h-24 bg-wavy"></div>
     </section>
 
-    <!-- Info Utama (Harga & Usia) -->
     <section class="py-12 bg-white relative z-20 -mt-10" id="info">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -147,7 +135,6 @@
                     <p class="text-lg font-semibold text-slate-700 bg-white/50 inline-block px-4 py-1 rounded-full mt-2">/ bulan</p>
                     <p class="text-slate-700 font-medium mt-3">Untuk 4 kali pertemuan</p>
                 </div>
-
                 <!-- Card Usia -->
                 <div class="bg-gina-green rounded-3xl p-8 flex flex-col items-center justify-center shadow-soft border-4 border-white transform transition-transform card-hover relative overflow-hidden">
                     <div class="absolute -left-4 -bottom-4 opacity-20 text-7xl"><i class="fa-solid fa-children"></i></div>
@@ -173,7 +160,7 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <!-- Materi (Kiri) -->
+                <!-- Materi -->
                 <div class="lg:col-span-5 space-y-6">
                     <div class="bg-gina-pink rounded-3xl p-8 shadow-soft border-4 border-white text-white">
                         <div class="flex items-center gap-3 mb-6">
@@ -183,31 +170,16 @@
                             <h3 class="text-2xl font-bold">Yang Dipelajari</h3>
                         </div>
                         <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i>
-                                <span class="text-lg font-medium">Teknik dasar mewarnai</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i>
-                                <span class="text-lg font-medium">Gradasi warna</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i>
-                                <span class="text-lg font-medium">Kreativitas dan imajinasi</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i>
-                                <span class="text-lg font-medium">Melatih kesabaran</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i>
-                                <span class="text-lg font-medium">Dasar-dasar Kaligrafi (Opsional/Sesuai sesi)</span>
-                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i><span class="text-lg font-medium">Teknik dasar mewarnai</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i><span class="text-lg font-medium">Gradasi warna</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i><span class="text-lg font-medium">Kreativitas dan imajinasi</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i><span class="text-lg font-medium">Melatih kesabaran</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1 text-xl text-pink-200"></i><span class="text-lg font-medium">Dasar-dasar Kaligrafi (Opsional/Sesi khusus)</span></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Pilihan Kelas (Kanan) -->
+                <!-- Pilihan Kelas -->
                 <div class="lg:col-span-7">
                     <div class="bg-gina-blue rounded-3xl p-8 shadow-soft border-4 border-white text-white h-full">
                         <div class="flex items-center gap-3 mb-6">
@@ -218,37 +190,17 @@
                         </div>
                         
                         <div class="space-y-4">
-                            <!-- Kelas 1 -->
                             <div class="bg-white/10 hover:bg-white/20 transition-colors p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-blue-300/30">
-                                <div>
-                                    <h4 class="text-xl font-bold">Sabtu Pagi</h4>
-                                    <p class="text-blue-100 flex items-center gap-2 mt-1"><i class="fa-regular fa-clock"></i> 09.00 – 11.00 WITA</p>
-                                </div>
-                                <a href="https://wa.me/6285246635975?text=Halo%20Kak%20Gina,%20saya%20ingin%20daftar%20kelas%20mewarnai%20jadwal%20Sabtu%20Pagi." target="_blank" class="bg-white text-gina-blue px-6 py-2 rounded-full font-bold text-center shadow-sm hover:scale-105 transition-transform">
-                                    Pilih Kelas
-                                </a>
+                                <div><h4 class="text-xl font-bold">Sabtu Pagi</h4><p class="text-blue-100 flex items-center gap-2 mt-1"><i class="fa-regular fa-clock"></i> 09.00 – 11.00 WITA</p></div>
+                                <a href="https://wa.me/6285246635975?text=Halo%20Kak%20Gina,%20saya%20ingin%20daftar%20kelas%20mewarnai%20jadwal%20Sabtu%20Pagi." target="_blank" class="bg-white text-gina-blue px-6 py-2 rounded-full font-bold text-center shadow-sm hover:scale-105 transition-transform">Pilih Kelas</a>
                             </div>
-                            
-                            <!-- Kelas 2 -->
                             <div class="bg-white/10 hover:bg-white/20 transition-colors p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-blue-300/30">
-                                <div>
-                                    <h4 class="text-xl font-bold">Sabtu Sore</h4>
-                                    <p class="text-blue-100 flex items-center gap-2 mt-1"><i class="fa-regular fa-clock"></i> 15.00 – 17.00 WITA</p>
-                                </div>
-                                <a href="https://wa.me/6285246635975?text=Halo%20Kak%20Gina,%20saya%20ingin%20daftar%20kelas%20mewarnai%20jadwal%20Sabtu%20Sore." target="_blank" class="bg-white text-gina-blue px-6 py-2 rounded-full font-bold text-center shadow-sm hover:scale-105 transition-transform">
-                                    Pilih Kelas
-                                </a>
+                                <div><h4 class="text-xl font-bold">Sabtu Sore</h4><p class="text-blue-100 flex items-center gap-2 mt-1"><i class="fa-regular fa-clock"></i> 15.00 – 17.00 WITA</p></div>
+                                <a href="https://wa.me/6285246635975?text=Halo%20Kak%20Gina,%20saya%20ingin%20daftar%20kelas%20mewarnai%20jadwal%20Sabtu%20Sore." target="_blank" class="bg-white text-gina-blue px-6 py-2 rounded-full font-bold text-center shadow-sm hover:scale-105 transition-transform">Pilih Kelas</a>
                             </div>
-
-                            <!-- Kelas 3 -->
                             <div class="bg-white/10 hover:bg-white/20 transition-colors p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-blue-300/30">
-                                <div>
-                                    <h4 class="text-xl font-bold text-gina-yellow">Minggu Pagi</h4>
-                                    <p class="text-blue-100 flex items-center gap-2 mt-1"><i class="fa-regular fa-clock"></i> 09.00 – 11.00 WITA</p>
-                                </div>
-                                <a href="https://wa.me/6285246635975?text=Halo%20Kak%20Gina,%20saya%20ingin%20daftar%20kelas%20mewarnai%20jadwal%20Minggu%20Pagi." target="_blank" class="bg-gina-yellow text-slate-800 px-6 py-2 rounded-full font-bold text-center shadow-sm hover:scale-105 transition-transform">
-                                    Pilih Kelas
-                                </a>
+                                <div><h4 class="text-xl font-bold text-gina-yellow">Minggu Pagi</h4><p class="text-blue-100 flex items-center gap-2 mt-1"><i class="fa-regular fa-clock"></i> 09.00 – 11.00 WITA</p></div>
+                                <a href="https://wa.me/6285246635975?text=Halo%20Kak%20Gina,%20saya%20ingin%20daftar%20kelas%20mewarnai%20jadwal%20Minggu%20Pagi." target="_blank" class="bg-gina-yellow text-slate-800 px-6 py-2 rounded-full font-bold text-center shadow-sm hover:scale-105 transition-transform">Pilih Kelas</a>
                             </div>
                         </div>
                     </div>
@@ -257,7 +209,6 @@
         </div>
     </section>
 
-    <!-- Galeri & Keseruan -->
     <section class="py-16 bg-white overflow-hidden" id="galeri">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -265,12 +216,10 @@
                 <p class="text-slate-500 mt-2 font-medium text-lg">Intip momen kreatif anak-anak saat belajar dan bermain warna!</p>
             </div>
             
-            <!-- Grid Galeri (Kini Terhubung ke Firebase) -->
             <div id="gallery-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 min-h-[300px]">
-                <!-- Tampilan Loading Sementara -->
                 <div class="col-span-2 md:col-span-4 flex flex-col items-center justify-center text-slate-400 py-10">
                     <i class="fa-solid fa-spinner fa-spin text-4xl mb-4"></i>
-                    <p class="font-medium">Memuat galeri dari Firebase...</p>
+                    <p class="font-medium">Memuat galeri dari Supabase...</p>
                 </div>
             </div>
             
@@ -282,23 +231,16 @@
         </div>
     </section>
 
-    <!-- Perlengkapan & Ketentuan -->
     <section class="py-16 bg-slate-50 border-t border-slate-200" id="ketentuan">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
                 <!-- Perlengkapan -->
                 <div class="bg-gina-purple rounded-3xl p-8 shadow-soft border-4 border-white text-white relative">
-                    <div class="absolute -right-4 top-4 transform rotate-12 bg-white text-gina-purple p-2 rounded-xl shadow-sticker font-bold text-sm">
-                        Siapkan alatmu ya! ❤️
-                    </div>
+                    <div class="absolute -right-4 top-4 transform rotate-12 bg-white text-gina-purple p-2 rounded-xl shadow-sticker font-bold text-sm">Siapkan alatmu ya! ❤️</div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gina-purple shadow-sm text-2xl">
-                            <i class="fa-solid fa-school"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gina-purple shadow-sm text-2xl"><i class="fa-solid fa-school"></i></div>
                         <h3 class="text-2xl font-bold">Perlengkapan</h3>
                     </div>
-                    
                     <ul class="space-y-4">
                         <li class="flex items-center gap-4 bg-white/10 p-3 rounded-xl">
                             <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-gina-purple text-xl"><i class="fa-solid fa-paintbrush"></i></div>
@@ -325,42 +267,25 @@
                 <!-- Ketentuan -->
                 <div class="bg-gina-orange rounded-3xl p-8 shadow-soft border-4 border-white text-white">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gina-orange shadow-sm text-2xl">
-                            <i class="fa-solid fa-clipboard-list"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gina-orange shadow-sm text-2xl"><i class="fa-solid fa-clipboard-list"></i></div>
                         <h3 class="text-2xl font-bold">Ketentuan Kelas</h3>
                     </div>
-                    
                     <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">1</div>
-                            <p class="text-lg font-medium pt-1">Biaya les berlaku untuk 4 kali pertemuan dalam 1 bulan.</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">2</div>
-                            <p class="text-lg font-medium pt-1">Peserta wajib mengikuti jadwal yang telah dipilih.</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">3</div>
-                            <p class="text-lg font-medium pt-1">Jadwal tidak dapat dipindahkan ke hari lain.</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">4</div>
-                            <p class="text-lg font-medium pt-1">Apabila peserta tidak hadir, biaya pertemuan dinyatakan hangus dan tidak dapat diganti atau dikembalikan.</p>
-                        </div>
+                        <div class="flex items-start gap-4"><div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">1</div><p class="text-lg font-medium pt-1">Biaya les berlaku untuk 4 kali pertemuan dalam 1 bulan.</p></div>
+                        <div class="flex items-start gap-4"><div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">2</div><p class="text-lg font-medium pt-1">Peserta wajib mengikuti jadwal yang telah dipilih.</p></div>
+                        <div class="flex items-start gap-4"><div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">3</div><p class="text-lg font-medium pt-1">Jadwal tidak dapat dipindahkan ke hari lain.</p></div>
+                        <div class="flex items-start gap-4"><div class="w-8 h-8 flex-shrink-0 bg-white text-gina-orange rounded-full flex items-center justify-center font-bold shadow-sm">4</div><p class="text-lg font-medium pt-1">Apabila peserta tidak hadir, biaya pertemuan dinyatakan hangus dan tidak dapat diganti atau dikembalikan.</p></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Lokasi & FAQ Tambahan -->
+    <!-- Lokasi & FAQ -->
     <section class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- FAQ Singkat -->
+                <!-- FAQ -->
                 <div>
                     <h2 class="text-3xl font-extrabold text-slate-800 mb-6"><span class="text-gina-orange">Pertanyaan</span> Umum</h2>
                     <div class="space-y-4">
@@ -374,12 +299,11 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Peta Lokasi -->
+                <!-- Peta Lokasi (Updated) -->
                 <div class="bg-slate-50 p-4 rounded-3xl shadow-sm border-4 border-gina-blue">
                     <h3 class="font-bold text-xl text-center mb-4 text-slate-800">Lokasi Belajar Kami</h3>
                     <div class="aspect-video w-full rounded-xl overflow-hidden bg-slate-200 relative">
-                        <!-- Menggunakan titik patokan SMPN 25 Banjarmasin -->
+                        <!-- Peta fokus di SMPN 25 Banjarmasin -->
                         <iframe 
                             src="https://maps.google.com/maps?q=SMP+Negeri+25+Banjarmasin,+Jalan+Intan+Sari,+Banjarmasin&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
@@ -396,7 +320,6 @@
                         <p class="text-sm text-slate-600 font-medium">Jl. Purnasakti Jalur 9, Jl. Intan Sari Gang Melati<br><span class="text-gina-blue font-bold">(Dekat SMPN 25 Banjarmasin)</span></p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -405,44 +328,27 @@
     <section class="py-16 bg-gradient-to-t from-blue-50 to-white text-center border-t border-slate-100">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-extrabold text-slate-800 mb-6">Siapkan warna-warnimu dan mari berkarya bersama! 🎨</h2>
-            
             <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg border-2 border-blue-100 max-w-2xl mx-auto">
                 <h3 class="text-xl font-bold text-slate-500 mb-6 border-b pb-4">Info & Pendaftaran (Hubungi Kami)</h3>
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Kontak WA -->
                     <div class="space-y-4">
                         <a href="https://wa.me/6285246635975" target="_blank" class="flex items-center gap-3 bg-green-50 p-3 rounded-xl hover:bg-green-100 transition-colors group">
                             <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div class="text-left">
-                                <p class="text-sm text-green-700 font-bold">Kak Gina</p>
-                                <p class="text-lg font-bold text-slate-800">0852 4663 5975</p>
-                            </div>
+                            <div class="text-left"><p class="text-sm text-green-700 font-bold">Kak Gina</p><p class="text-lg font-bold text-slate-800">0852 4663 5975</p></div>
                         </a>
                         <a href="https://wa.me/628971425192" target="_blank" class="flex items-center gap-3 bg-green-50 p-3 rounded-xl hover:bg-green-100 transition-colors group">
                             <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div class="text-left">
-                                <p class="text-sm text-green-700 font-bold">Kak Lukman</p>
-                                <p class="text-lg font-bold text-slate-800">0897 1425 192</p>
-                            </div>
+                            <div class="text-left"><p class="text-sm text-green-700 font-bold">Kak Lukman</p><p class="text-lg font-bold text-slate-800">0897 1425 192</p></div>
                         </a>
                     </div>
-                    
-                    <!-- Sosmed -->
                     <div class="space-y-4">
                         <a href="https://instagram.com/gina_rumahseni" target="_blank" class="flex items-center gap-3 bg-pink-50 p-3 rounded-xl hover:bg-pink-100 transition-colors group">
                             <div class="w-12 h-12 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform"><i class="fa-brands fa-instagram"></i></div>
-                            <div class="text-left">
-                                <p class="text-sm text-pink-700 font-bold">Instagram</p>
-                                <p class="text-lg font-bold text-slate-800">@gina_rumahseni</p>
-                            </div>
+                            <div class="text-left"><p class="text-sm text-pink-700 font-bold">Instagram</p><p class="text-lg font-bold text-slate-800">@gina_rumahseni</p></div>
                         </a>
                         <a href="https://tiktok.com/@rumahseni.gina" target="_blank" class="flex items-center gap-3 bg-slate-100 p-3 rounded-xl hover:bg-slate-200 transition-colors group">
                             <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform"><i class="fa-brands fa-tiktok"></i></div>
-                            <div class="text-left">
-                                <p class="text-sm text-slate-600 font-bold">TikTok</p>
-                                <p class="text-lg font-bold text-slate-800">@rumahseni.gina</p>
-                            </div>
+                            <div class="text-left"><p class="text-sm text-slate-600 font-bold">TikTok</p><p class="text-lg font-bold text-slate-800">@rumahseni.gina</p></div>
                         </a>
                     </div>
                 </div>
@@ -462,21 +368,17 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button (Mobile & Desktop) -->
+    <!-- Floating WA -->
     <a href="https://wa.me/6285246635975?text=Halo%20Kak%20Gina,%20saya%20tertarik%20dengan%20kelas%20mewarnai." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all z-50 flex items-center justify-center" aria-label="Chat WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- ============================================== -->
-    <!-- MODAL LOGIN ADMIN -->
-    <!-- ============================================== -->
+    <!-- MODAL LOGIN -->
     <div id="login-panel" class="fixed inset-0 bg-slate-900/95 z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300 px-4">
         <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-md w-full border-t-8 border-gina-pink relative">
             <button id="close-login-btn" class="absolute top-4 right-5 text-slate-400 hover:text-gina-pink text-2xl transition-transform active:scale-90"><i class="fa-solid fa-xmark"></i></button>
             <div class="text-center mb-6">
-                <div class="w-16 h-16 bg-gina-pink rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-3 shadow-sticker">
-                    <i class="fa-solid fa-lock"></i>
-                </div>
+                <div class="w-16 h-16 bg-gina-pink rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-3 shadow-sticker"><i class="fa-solid fa-lock"></i></div>
                 <h2 class="text-2xl font-bold text-slate-800">Login Kak Gina</h2>
                 <p class="text-slate-500 text-sm mt-1">Silakan masukkan akses untuk mengelola galeri.</p>
             </div>
@@ -496,32 +398,24 @@
                         <input type="password" id="login-password" class="w-full pl-10 pr-3 py-2 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-gina-blue focus:ring-1 focus:ring-gina-blue transition-colors" placeholder="••••••••" required>
                     </div>
                 </div>
-                <!-- Pesan Error -->
                 <div id="login-error" class="text-red-500 text-sm font-bold hidden text-center bg-red-50 p-2 rounded-lg border border-red-100">
                     <i class="fa-solid fa-triangle-exclamation mr-1"></i> Email atau password salah!
                 </div>
-                
                 <button type="submit" class="w-full bg-gina-blue text-white py-3 rounded-xl font-bold shadow-sm hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 mt-2">
                     <i class="fa-solid fa-right-to-bracket"></i> Masuk ke Panel
                 </button>
             </form>
-            
-            <!-- Info Akun Demo -->
             <div class="mt-5 text-center text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                <span class="font-bold text-gina-blue">AKUN DEMO:</span><br>
-                Email: <b>admin@rumahseni.com</b><br>
-                Password: <b>admin123</b>
+                <span class="font-bold text-gina-blue">AKUN DEMO:</span><br>Email: <b>admin@rumahseni.com</b><br>Password: <b>admin123</b>
             </div>
         </div>
     </div>
 
-    <!-- ============================================== -->
-    <!-- PANEL ADMIN RAHASIA (Disembunyikan secara default) -->
-    <!-- ============================================== -->
+    <!-- PANEL ADMIN (Upload Foto) -->
     <div id="admin-panel" class="fixed inset-0 bg-slate-900/95 z-[100] hidden overflow-y-auto pt-10 pb-20 opacity-0 transition-opacity duration-300">
         <div class="max-w-4xl mx-auto px-4">
             <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-white"><i class="fa-solid fa-database text-gina-blue"></i> Panel Admin Firebase</h2>
+                <h2 class="text-3xl font-bold text-white"><i class="fa-solid fa-database text-gina-blue"></i> Panel Admin Supabase</h2>
                 <button id="close-admin-btn" class="text-white hover:text-gina-pink text-3xl transition-transform active:scale-90"><i class="fa-solid fa-xmark"></i></button>
             </div>
             
@@ -529,7 +423,7 @@
                 <h3 class="text-xl font-bold text-slate-800 mb-4">Upload Foto Galeri</h3>
                 <div class="flex flex-col md:flex-row gap-4 items-end">
                     <div class="flex-1 w-full">
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Pilih Foto dari HP/Laptop (Otomatis diperkecil sebelum masuk ke Firebase)</label>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Pilih Foto dari HP/Laptop (Otomatis diperkecil sebelum masuk DB)</label>
                         <input type="file" id="file-upload" accept="image/*" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-blue-50 file:text-gina-blue hover:file:bg-blue-100 border border-slate-200 rounded-full p-1 cursor-pointer">
                     </div>
                     <button id="btn-upload" class="bg-gina-blue text-white px-6 py-2.5 rounded-full font-bold shadow-sm hover:bg-blue-600 transition-all active:scale-95 disabled:opacity-50 h-[46px] flex items-center justify-center min-w-[200px]">
@@ -551,24 +445,18 @@
         </div>
     </div>
 
-    <!-- ============================================== -->
-    <!-- LOGIKA FIREBASE CLOUD STORAGE & DATABASE       -->
-    <!-- ============================================== -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    <!-- SUPABASE LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-        // 1. Inisialisasi Firebase (Menggunakan konfigurasi dari environment/sistem)
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'gina-rumahseni-app';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { projectId: "demo-project" };
+    <script>
+        // 1. INISIALISASI SUPABASE (MENGGUNAKAN KUNCI KAK GINA)
+        const supabaseUrl = 'https://wadvbsrvoskdfvglvrsg.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndhZHZic3J2b3NrZGZ2Z2x2cnNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk5NjIzOTAsImV4cCI6MjEwNTUzODM5MH0.xnn-jhEI9xUpShMgfApCCILgyi4vW2P-EG5_5OppmbE';
         
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        let currentUser = null;
+        // Membuka jalur komunikasi dengan server Supabase
+        const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-        // Elemen HTML yang akan kita kendalikan
+        // ELEMEN HTML
         const galleryContainer = document.getElementById('gallery-container');
         const adminGalleryList = document.getElementById('admin-gallery-list');
         const fileUpload = document.getElementById('file-upload');
@@ -578,7 +466,7 @@
         const openAdminBtn = document.getElementById('open-admin-btn');
         const closeAdminBtn = document.getElementById('close-admin-btn');
 
-        // Elemen Login Baru
+        // ELEMEN LOGIN
         const loginPanel = document.getElementById('login-panel');
         const closeLoginBtn = document.getElementById('close-login-btn');
         const loginForm = document.getElementById('login-form');
@@ -586,113 +474,118 @@
         const loginPassword = document.getElementById('login-password');
         const loginError = document.getElementById('login-error');
 
-        // Buka Modal Login (Bukan langsung panel admin)
+        // ==========================================
+        // LOGIKA TAMPILAN MENU & PANEL RAHASIA
+        // ==========================================
+        
         openAdminBtn.addEventListener('click', (e) => { 
             e.preventDefault(); 
             loginPanel.classList.remove('hidden');
-            loginPanel.classList.add('flex'); // Pakai flex agar letaknya di tengah layar
+            loginPanel.classList.add('flex');
             setTimeout(() => loginPanel.classList.remove('opacity-0'), 10);
         });
 
-        // Tutup Modal Login
         closeLoginBtn.addEventListener('click', () => {
             loginPanel.classList.add('opacity-0');
             setTimeout(() => {
                 loginPanel.classList.add('hidden');
                 loginPanel.classList.remove('flex');
-                loginError.classList.add('hidden'); // Sembunyikan pesan error jika ditutup
+                loginError.classList.add('hidden');
                 loginForm.reset();
             }, 300);
         });
 
-        // Logika Verifikasi Akun (Simulasi Demo)
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = loginEmail.value;
             const password = loginPassword.value;
 
-            // Mengecek apakah email & password sesuai
+            // Kunci UI sederhana untuk melindungi fungsi Upload/Delete
             if (email === 'admin@rumahseni.com' && password === 'admin123') {
-                // JIKA BENAR: Sembunyikan error, bersihkan form, tutup panel login
                 loginError.classList.add('hidden');
                 loginForm.reset();
-                
                 loginPanel.classList.add('opacity-0');
+                
                 setTimeout(() => {
                     loginPanel.classList.add('hidden');
                     loginPanel.classList.remove('flex');
-                    
-                    // Lalu BUKA Panel Admin Utama!
                     adminPanel.classList.remove('hidden');
                     setTimeout(() => adminPanel.classList.remove('opacity-0'), 10);
                 }, 300);
             } else {
-                // JIKA SALAH: Tampilkan peringatan merah
                 loginError.classList.remove('hidden');
             }
         });
 
-        // Tutup Admin Panel
         closeAdminBtn.addEventListener('click', () => {
             adminPanel.classList.add('opacity-0');
-            setTimeout(() => adminPanel.classList.add('hidden'), 300); // 300ms sesuai durasi transisi
+            setTimeout(() => adminPanel.classList.add('hidden'), 300);
         });
 
-        // 2. Fungsi Autentikasi Wajib (Masuk dengan jalur aman)
-        async function initAuth() {
+        // Script untuk Mobile Menu Navbar
+        const btnMenu = document.getElementById('mobile-menu-btn');
+        const menuMobile = document.getElementById('mobile-menu');
+        const linksMobile = document.querySelectorAll('.mobile-link');
+
+        btnMenu.addEventListener('click', () => {
+            menuMobile.classList.toggle('hidden');
+            const icon = btnMenu.querySelector('i');
+            if(menuMobile.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+            }
+        });
+        linksMobile.forEach(link => {
+            link.addEventListener('click', () => {
+                menuMobile.classList.add('hidden');
+                btnMenu.querySelector('i').classList.remove('fa-xmark');
+                btnMenu.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // ==========================================
+        // LOGIKA DATABASE SUPABASE (READ, INSERT, DELETE)
+        // ==========================================
+
+        // 1. READ: Mengambil Data dari Supabase
+        async function loadGallery() {
             try {
-                if (typeof __initial_auth_token !== 'undefined') {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-                currentUser = auth.currentUser;
-                loadGallery(); // Tarik data setelah sukses login
-            } catch (error) {
-                console.error("Auth Error:", error);
-                galleryContainer.innerHTML = '<div class="col-span-4 text-center text-red-500 font-bold p-10">Gagal terhubung ke Firebase.</div>';
+                // Meminta seluruh isi tabel 'galeri' diurutkan dari terbaru (descending)
+                const { data: photos, error } = await supabaseClient
+                    .from('galeri')
+                    .select('*')
+                    .order('timestamp', { ascending: false });
+
+                if (error) throw error;
+                
+                renderPublicGallery(photos || []);
+                renderAdminGallery(photos || []);
+                
+            } catch (err) {
+                console.error("Gagal terhubung ke Supabase:", err.message);
+                galleryContainer.innerHTML = `
+                    <div class="col-span-4 text-center bg-red-50 border border-red-200 p-8 rounded-2xl">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500 text-4xl mb-3"></i>
+                        <h4 class="font-bold text-red-700">Tabel Supabase Belum Siap</h4>
+                        <p class="text-sm text-red-600 mt-2">Jangan lupa untuk menjalankan <b>Kode SQL</b> di Dashboard Supabase untuk membuat tabel otomatis ya, Kak Gina!</p>
+                    </div>`;
             }
         }
 
-        // 3. Menarik Data secara Realtime (Live Sync)
-        function loadGallery() {
-            if (!currentUser) return;
-            
-            // Mengikuti aturan penyimpanan ketat
-            const galleryRef = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
-            
-            // onSnapshot memonitor perubahan data secara langsung
-            onSnapshot(galleryRef, (snapshot) => {
-                let photos = [];
-                snapshot.forEach((doc) => {
-                    photos.push({ id: doc.id, ...doc.data() });
-                });
-                
-                // Urutkan dari foto yang paling baru diupload
-                photos.sort((a, b) => b.timestamp - a.timestamp);
-                
-                renderPublicGallery(photos);
-                renderAdminGallery(photos);
-            }, (error) => {
-                console.error("Firebase Error:", error);
-            });
-        }
-
-        // 4. Menampilkan ke Website Publik
+        // 2. RENDER: Menampilkan foto di halaman publik
         function renderPublicGallery(photos) {
             if (photos.length === 0) {
                 galleryContainer.innerHTML = `
                     <div class="col-span-2 md:col-span-4 text-center py-12 text-slate-500 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
                         <i class="fa-solid fa-camera-retro text-5xl mb-4 text-slate-300"></i>
                         <p class="font-medium text-lg">Galeri masih kosong.</p>
-                        <p class="text-sm mt-1">Gunakan "Gembok Rahasia" di paling bawah web untuk mengupload foto.</p>
+                        <p class="text-sm mt-1">Silakan login sebagai Admin untuk mengunggah foto.</p>
                     </div>`;
                 return;
             }
             
             galleryContainer.innerHTML = '';
-            
-            // Variasi rotasi dan warna agar terlihat ceria
             const rotations = ['rotate-[-2deg]', 'rotate-[3deg]', 'rotate-[-1deg]', 'rotate-[2deg]'];
             const borders = ['border-pink-100', 'border-blue-100', 'border-yellow-100', 'border-purple-100'];
 
@@ -708,7 +601,7 @@
             });
         }
 
-        // 5. Menampilkan ke Panel Admin (Dengan Tombol Hapus)
+        // 3. RENDER & DELETE: Menampilkan foto di Panel Admin dan fungsi hapus
         function renderAdminGallery(photos) {
             if (photos.length === 0) {
                 adminGalleryList.innerHTML = '<div class="col-span-4 text-center py-6 text-slate-400">Belum ada foto tersimpan.</div>';
@@ -730,24 +623,32 @@
                 adminGalleryList.appendChild(div);
             });
 
-            // Logika Menghapus Data di Firebase
+            // LOGIKA DELETE (Hapus data dari Supabase)
             document.querySelectorAll('.delete-btn').forEach(btn => {
                 btn.addEventListener('click', async (e) => {
                     const id = e.currentTarget.getAttribute('data-id');
                     const originalHtml = e.currentTarget.innerHTML;
-                    e.currentTarget.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; // Efek Loading
+                    e.currentTarget.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; 
                     
                     try {
-                        await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'gallery', id));
+                        const { error } = await supabaseClient
+                            .from('galeri')
+                            .delete()
+                            .eq('id', id); // Menghapus baris yang ID-nya cocok
+                            
+                        if (error) throw error;
+                        loadGallery(); // Panggil ulang galeri setelah dihapus
+                        
                     } catch (err) {
                         console.error("Gagal menghapus:", err);
-                        e.currentTarget.innerHTML = originalHtml; // Kembalikan tombol jika gagal
+                        e.currentTarget.innerHTML = originalHtml; 
+                        alert("Gagal menghapus gambar. Pastikan RLS di Supabase sudah dimatikan.");
                     }
                 });
             });
         }
 
-        // 6. Logika Upload File & Pengecilan Gambar (Client-side Resize)
+        // 4. INSERT (Upload File & Resize Otomatis ke Base64 Text)
         btnUpload.addEventListener('click', () => {
             const file = fileUpload.files[0];
             if (!file) {
@@ -762,7 +663,8 @@
             reader.onload = function(event) {
                 const img = new Image();
                 img.onload = async function() {
-                    // Perkecil gambar maksimal 800px agar ringan masuk ke Firebase
+                    
+                    // Mengecilkan ukuran gambar maksimal lebar/tinggi 800px
                     const canvas = document.createElement('canvas');
                     const MAX_SIZE = 800;
                     let width = img.width;
@@ -781,20 +683,28 @@
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, width, height);
                     
-                    // Ubah menjadi Base64 Text (kualitas JPEG 70%)
+                    // Mengubah gambar menjadi teks Base64
                     const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
 
                     try {
-                        // Simpan ke Firebase
-                        const galleryRef = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
-                        await addDoc(galleryRef, {
-                            image: compressedDataUrl,
-                            timestamp: Date.now()
-                        });
+                        // LOGIKA INSERT (Menyimpan foto baru ke Supabase)
+                        const { error } = await supabaseClient
+                            .from('galeri')
+                            .insert([
+                                { 
+                                    image: compressedDataUrl, 
+                                    timestamp: Date.now() 
+                                }
+                            ]);
+                            
+                        if (error) throw error;
+
                         showStatus("✅ Foto berhasil diunggah!", "text-green-600");
-                        fileUpload.value = ''; // Reset input file
-                    } catch (error) {
-                        console.error("Upload error:", error);
+                        fileUpload.value = ''; 
+                        loadGallery(); // Refresh otomatis
+                        
+                    } catch (err) {
+                        console.error("Upload error:", err);
                         showStatus("❌ Gagal mengunggah ke database.", "text-red-500");
                     } finally {
                         btnUpload.disabled = false;
@@ -806,7 +716,6 @@
             reader.readAsDataURL(file);
         });
 
-        // Helper notifikasi
         function showStatus(msg, colorClass) {
             uploadStatus.textContent = msg;
             uploadStatus.className = `text-sm mt-3 font-bold ${colorClass}`;
@@ -814,36 +723,8 @@
             setTimeout(() => uploadStatus.classList.add('hidden'), 4000);
         }
 
-        // Jalankan aplikasi
-        initAuth();
-    </script>
-
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
-
-        // Buka/Tutup menu saat tombol ditekan
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            const icon = btn.querySelector('i');
-            if(menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            }
-        });
-
-        // Tutup menu secara otomatis saat link diklik
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                btn.querySelector('i').classList.remove('fa-xmark');
-                btn.querySelector('i').classList.add('fa-bars');
-            });
-        });
+        // Panggil saat website pertama kali dibuka
+        loadGallery();
     </script>
 </body>
 </html>
