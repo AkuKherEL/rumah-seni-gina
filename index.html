@@ -373,14 +373,14 @@
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- MODAL LOGIN -->
+    <!-- MODAL LOGIN (KINI TERHUBUNG KE SUPABASE AUTH) -->
     <div id="login-panel" class="fixed inset-0 bg-slate-900/95 z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300 px-4">
         <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-md w-full border-t-8 border-gina-pink relative">
             <button id="close-login-btn" class="absolute top-4 right-5 text-slate-400 hover:text-gina-pink text-2xl transition-transform active:scale-90"><i class="fa-solid fa-xmark"></i></button>
             <div class="text-center mb-6">
                 <div class="w-16 h-16 bg-gina-pink rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-3 shadow-sticker"><i class="fa-solid fa-lock"></i></div>
                 <h2 class="text-2xl font-bold text-slate-800">Login Kak Gina</h2>
-                <p class="text-slate-500 text-sm mt-1">Silakan masukkan akses untuk mengelola galeri.</p>
+                <p class="text-slate-500 text-sm mt-1">Silakan masuk menggunakan akun Supabase.</p>
             </div>
             
             <form id="login-form" class="space-y-4">
@@ -399,15 +399,12 @@
                     </div>
                 </div>
                 <div id="login-error" class="text-red-500 text-sm font-bold hidden text-center bg-red-50 p-2 rounded-lg border border-red-100">
-                    <i class="fa-solid fa-triangle-exclamation mr-1"></i> Email atau password salah!
+                    <i class="fa-solid fa-triangle-exclamation mr-1"></i> <span>Gagal login.</span>
                 </div>
-                <button type="submit" class="w-full bg-gina-blue text-white py-3 rounded-xl font-bold shadow-sm hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 mt-2">
+                <button type="submit" id="btn-login-submit" class="w-full bg-gina-blue text-white py-3 rounded-xl font-bold shadow-sm hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 mt-2">
                     <i class="fa-solid fa-right-to-bracket"></i> Masuk ke Panel
                 </button>
             </form>
-            <div class="mt-5 text-center text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                <span class="font-bold text-gina-blue">AKUN DEMO:</span><br>Email: <b>admin@rumahseni.com</b><br>Password: <b>admin123</b>
-            </div>
         </div>
     </div>
 
@@ -416,7 +413,7 @@
         <div class="max-w-4xl mx-auto px-4">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-white"><i class="fa-solid fa-database text-gina-blue"></i> Panel Admin Supabase</h2>
-                <button id="close-admin-btn" class="text-white hover:text-gina-pink text-3xl transition-transform active:scale-90"><i class="fa-solid fa-xmark"></i></button>
+                <button id="close-admin-btn" title="Tutup dan Logout" class="text-white hover:text-gina-pink text-3xl transition-transform active:scale-90"><i class="fa-solid fa-power-off"></i></button>
             </div>
             
             <div class="bg-white rounded-3xl p-6 shadow-xl mb-8 border-t-4 border-gina-blue">
@@ -473,16 +470,26 @@
         const loginEmail = document.getElementById('login-email');
         const loginPassword = document.getElementById('login-password');
         const loginError = document.getElementById('login-error');
+        const btnLoginSubmit = document.getElementById('btn-login-submit');
 
         // ==========================================
         // LOGIKA TAMPILAN MENU & PANEL RAHASIA
         // ==========================================
         
-        openAdminBtn.addEventListener('click', (e) => { 
+        openAdminBtn.addEventListener('click', async (e) => { 
             e.preventDefault(); 
-            loginPanel.classList.remove('hidden');
-            loginPanel.classList.add('flex');
-            setTimeout(() => loginPanel.classList.remove('opacity-0'), 10);
+            // Cek jika Kak Gina ternyata masih dalam keadaan login dari sesi sebelumnya
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            if (session) {
+                // Langsung buka panel admin tanpa minta password lagi
+                adminPanel.classList.remove('hidden');
+                setTimeout(() => adminPanel.classList.remove('opacity-0'), 10);
+            } else {
+                // Jika belum, tampilkan form login
+                loginPanel.classList.remove('hidden');
+                loginPanel.classList.add('flex');
+                setTimeout(() => loginPanel.classList.remove('opacity-0'), 10);
+            }
         });
 
         closeLoginBtn.addEventListener('click', () => {
@@ -495,13 +502,32 @@
             }, 300);
         });
 
-        loginForm.addEventListener('submit', (e) => {
+        // 🌟 LOGIKA LOGIN SUPABASE ASLI
+        loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = loginEmail.value;
             const password = loginPassword.value;
 
-            // Kunci UI sederhana untuk melindungi fungsi Upload/Delete
-            if (email === 'admin@rumahseni.com' && password === 'admin123') {
+            // Animasi loading pada tombol
+            const originalText = btnLoginSubmit.innerHTML;
+            btnLoginSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Memeriksa...';
+            btnLoginSubmit.disabled = true;
+
+            // Meminta Supabase memeriksa keaslian email dan password
+            const { data, error } = await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password,
+            });
+
+            btnLoginSubmit.innerHTML = originalText;
+            btnLoginSubmit.disabled = false;
+
+            if (error) {
+                // Jika gagal (salah password/email tidak ada)
+                loginError.classList.remove('hidden');
+                loginError.querySelector('span').textContent = "Email atau Password salah!";
+            } else {
+                // Jika berhasil login!
                 loginError.classList.add('hidden');
                 loginForm.reset();
                 loginPanel.classList.add('opacity-0');
@@ -512,12 +538,13 @@
                     adminPanel.classList.remove('hidden');
                     setTimeout(() => adminPanel.classList.remove('opacity-0'), 10);
                 }, 300);
-            } else {
-                loginError.classList.remove('hidden');
             }
         });
 
-        closeAdminBtn.addEventListener('click', () => {
+        closeAdminBtn.addEventListener('click', async () => {
+            // Melakukan proses LOGOUT / Sign Out dari sistem Supabase
+            await supabaseClient.auth.signOut(); 
+            
             adminPanel.classList.add('opacity-0');
             setTimeout(() => adminPanel.classList.add('hidden'), 300);
         });
@@ -568,7 +595,7 @@
                     <div class="col-span-4 text-center bg-red-50 border border-red-200 p-8 rounded-2xl">
                         <i class="fa-solid fa-triangle-exclamation text-red-500 text-4xl mb-3"></i>
                         <h4 class="font-bold text-red-700">Tabel Supabase Belum Siap</h4>
-                        <p class="text-sm text-red-600 mt-2">Jangan lupa untuk menjalankan <b>Kode SQL</b> di Dashboard Supabase untuk membuat tabel otomatis ya, Kak Gina!</p>
+                        <p class="text-sm text-red-600 mt-2">Masih gagal terhubung. Pesan: ${err.message}</p>
                     </div>`;
             }
         }
@@ -642,7 +669,7 @@
                     } catch (err) {
                         console.error("Gagal menghapus:", err);
                         e.currentTarget.innerHTML = originalHtml; 
-                        alert("Gagal menghapus gambar. Pastikan RLS di Supabase sudah dimatikan.");
+                        alert("Gagal menghapus gambar: " + err.message);
                     }
                 });
             });
