@@ -468,6 +468,54 @@
     </a>
 
     <!-- ============================================== -->
+    <!-- MODAL LOGIN ADMIN -->
+    <!-- ============================================== -->
+    <div id="login-panel" class="fixed inset-0 bg-slate-900/95 z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300 px-4">
+        <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-md w-full border-t-8 border-gina-pink relative">
+            <button id="close-login-btn" class="absolute top-4 right-5 text-slate-400 hover:text-gina-pink text-2xl transition-transform active:scale-90"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gina-pink rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-3 shadow-sticker">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800">Login Kak Gina</h2>
+                <p class="text-slate-500 text-sm mt-1">Silakan masukkan akses untuk mengelola galeri.</p>
+            </div>
+            
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-envelope"></i></div>
+                        <input type="email" id="login-email" class="w-full pl-10 pr-3 py-2 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-gina-blue focus:ring-1 focus:ring-gina-blue transition-colors" placeholder="email@contoh.com" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-key"></i></div>
+                        <input type="password" id="login-password" class="w-full pl-10 pr-3 py-2 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-gina-blue focus:ring-1 focus:ring-gina-blue transition-colors" placeholder="••••••••" required>
+                    </div>
+                </div>
+                <!-- Pesan Error -->
+                <div id="login-error" class="text-red-500 text-sm font-bold hidden text-center bg-red-50 p-2 rounded-lg border border-red-100">
+                    <i class="fa-solid fa-triangle-exclamation mr-1"></i> Email atau password salah!
+                </div>
+                
+                <button type="submit" class="w-full bg-gina-blue text-white py-3 rounded-xl font-bold shadow-sm hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 mt-2">
+                    <i class="fa-solid fa-right-to-bracket"></i> Masuk ke Panel
+                </button>
+            </form>
+            
+            <!-- Info Akun Demo -->
+            <div class="mt-5 text-center text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <span class="font-bold text-gina-blue">AKUN DEMO:</span><br>
+                Email: <b>admin@rumahseni.com</b><br>
+                Password: <b>admin123</b>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
     <!-- PANEL ADMIN RAHASIA (Disembunyikan secara default) -->
     <!-- ============================================== -->
     <div id="admin-panel" class="fixed inset-0 bg-slate-900/95 z-[100] hidden overflow-y-auto pt-10 pb-20 opacity-0 transition-opacity duration-300">
@@ -530,12 +578,61 @@
         const openAdminBtn = document.getElementById('open-admin-btn');
         const closeAdminBtn = document.getElementById('close-admin-btn');
 
-        // Buka/Tutup Admin Panel
+        // Elemen Login Baru
+        const loginPanel = document.getElementById('login-panel');
+        const closeLoginBtn = document.getElementById('close-login-btn');
+        const loginForm = document.getElementById('login-form');
+        const loginEmail = document.getElementById('login-email');
+        const loginPassword = document.getElementById('login-password');
+        const loginError = document.getElementById('login-error');
+
+        // Buka Modal Login (Bukan langsung panel admin)
         openAdminBtn.addEventListener('click', (e) => { 
             e.preventDefault(); 
-            adminPanel.classList.remove('hidden');
-            setTimeout(() => adminPanel.classList.remove('opacity-0'), 10);
+            loginPanel.classList.remove('hidden');
+            loginPanel.classList.add('flex'); // Pakai flex agar letaknya di tengah layar
+            setTimeout(() => loginPanel.classList.remove('opacity-0'), 10);
         });
+
+        // Tutup Modal Login
+        closeLoginBtn.addEventListener('click', () => {
+            loginPanel.classList.add('opacity-0');
+            setTimeout(() => {
+                loginPanel.classList.add('hidden');
+                loginPanel.classList.remove('flex');
+                loginError.classList.add('hidden'); // Sembunyikan pesan error jika ditutup
+                loginForm.reset();
+            }, 300);
+        });
+
+        // Logika Verifikasi Akun (Simulasi Demo)
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = loginEmail.value;
+            const password = loginPassword.value;
+
+            // Mengecek apakah email & password sesuai
+            if (email === 'admin@rumahseni.com' && password === 'admin123') {
+                // JIKA BENAR: Sembunyikan error, bersihkan form, tutup panel login
+                loginError.classList.add('hidden');
+                loginForm.reset();
+                
+                loginPanel.classList.add('opacity-0');
+                setTimeout(() => {
+                    loginPanel.classList.add('hidden');
+                    loginPanel.classList.remove('flex');
+                    
+                    // Lalu BUKA Panel Admin Utama!
+                    adminPanel.classList.remove('hidden');
+                    setTimeout(() => adminPanel.classList.remove('opacity-0'), 10);
+                }, 300);
+            } else {
+                // JIKA SALAH: Tampilkan peringatan merah
+                loginError.classList.remove('hidden');
+            }
+        });
+
+        // Tutup Admin Panel
         closeAdminBtn.addEventListener('click', () => {
             adminPanel.classList.add('opacity-0');
             setTimeout(() => adminPanel.classList.add('hidden'), 300); // 300ms sesuai durasi transisi
