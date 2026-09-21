@@ -705,7 +705,8 @@
                         
                     } catch (err) {
                         console.error("Upload error:", err);
-                        showStatus("❌ Gagal mengunggah ke database.", "text-red-500");
+                        // MENAMPILKAN DETAIL ERROR DARI SUPABASE KE LAYAR
+                        showStatus("❌ Gagal: " + (err.message || err.details || "Cek konsol"), "text-red-500");
                     } finally {
                         btnUpload.disabled = false;
                         btnUpload.innerHTML = '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Upload Foto';
